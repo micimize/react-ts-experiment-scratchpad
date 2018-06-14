@@ -1,3 +1,7 @@
+type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
+
+type Diff<T, U> = T extends U ? never : T
+
 type NonNull<T> = Diff<T, null | undefined>
 
 type Full<T> = T & {

@@ -1,5 +1,4 @@
 import * as R from 'ramda'
-import { DeepFull } from './utils'
 import { DeepPathOf as PathOf, DeepTypeOf as TypeOf, PathAppend } from './deep-path'
 
 const lensPath = <T, P extends PathOf<T>>(p: P) =>
@@ -44,5 +43,8 @@ namespace PrettyLens {
   export type Path<T> = PathOf<T>
   export type Focus<T, P extends Path<T>> = TypeOf<T, P>
 }
+
+let fooLens = PrettyLens<{ x: { y: { z: 'foobar' } } }>().x.y
+let foo = R.view(fooLens.z)({ x: { y: { z: 'foobar' } } })
 
 export default PrettyLens
