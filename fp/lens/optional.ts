@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+import { DeepFull } from './utils'
 import { DeepPathOf, DeepTypeOf, PathAppend } from './deep-path'
 
 const LensProperties = [ '_fake_lens_getter', '_fake_lens_setter' ]
